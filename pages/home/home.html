@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>Appliance Installment Plan Calculator App</h2>
+  <p>
+   With this calculator app, you can find out how your payment of the appliance will be spread out over the payment period.
+  </p>
+  <p>
+    Put your details below!
+  </p>
+
+  <ion-item>
+    <ion-label>Appliance Price: </ion-label>
+    <ion-input type="number" [(ngModel)]= "price" ></ion-input>
+  </ion-item>
+
+    <ion-item>
+    <ion-label>Length of Repayment: </ion-label>
+    <ion-input type="number" [(ngModel)]= "months" ></ion-input>
+  </ion-item>
+
+<br />
+
+  <button ion-button color= "primary" (click)="calculateDown ()" (click)="calculateLoan ()" (click)="calculateInterest ()" (click)="calculateMonthly ()">CALCULATE 
+</button>
+  <ion-item *ngIf="down">
+    <h2> Downpayment Amount: {{down}} Pesos </h2>
+  </ion-item>
+  
+   <ion-item *ngIf="loan">
+    <h2> Total Loan Amount: {{loan}} Pesos </h2>
+  </ion-item>
+  
+ <ion-item *ngIf="interest">
+    <h2> Total Interest Payable: {{interest}} Pesos </h2>
+  </ion-item>
+  
+ <ion-item *ngIf="monthly">
+    <h2> Monthly Amount: {{monthly}} Pesos </h2>
+  </ion-item>
+
+
+<br />
+
+  
